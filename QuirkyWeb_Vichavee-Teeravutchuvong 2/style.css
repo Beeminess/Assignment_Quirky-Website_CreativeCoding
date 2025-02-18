@@ -1,0 +1,131 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+}
+
+
+main {
+    width: 70;
+    margin: auto;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 40px;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 100%;
+    text-align: center;
+}
+
+#bee-button {
+    background: transparent;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    width: mix-content;
+    color: white;
+    border-radius: 10px;
+    border: none;
+
+    animation: wiggle 3s linear infinite;
+
+    /*Bee*/
+    background-image: url(img/The_Bee.png);
+    background-size: 250px auto;
+
+    /*text*/
+    font-size: 30px;
+    text-align: left;
+    padding-top: 220px;
+    text-transform: capitalize;
+} 
+
+/*Wiggle keyframes*/
+@keyframes wiggle {
+    0%,10% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+
+/* Below is loop BG text
+Using em for your padding-left is going to ensure the padding scales in proportion to the font-size. */
+
+.content {
+    font-family: "Inter", sans-serif;
+    font-size: 12rem;
+    font-weight: 1000;
+    -webkit-text-stroke: 2px rgb(236, 30, 255);
+    color: transparent;
+    padding-left: 0.25em;
+    font-style: italic;
+    
+}
+
+
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 2rem !important;
+        padding-left: 0.25em;
+    }
+}
+
+.outer {
+    overflow: hidden;  !important;
+}
+
+.outer div {
+    display: inline-block;
+}
+
+.loop {
+    white-space: nowrap;
+    animation: loop-anim 30s linear infinite;
+}
+
+.loop2 {
+    white-space: nowrap;
+    animation: loop-anim 25s linear infinite;
+}
+
+@media only screen and (max-width: 767px) {
+    .loop {
+        animation: loop-anim 3.5s linear infinite;
+    }
+}
+
+@keyframes loop-anim {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -50% /* This works because of the div between "outer" and "loop" */
+    }
+}
